@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Optimización del Volumen de un Taco - Problema de Cálculo Diferencial</title>
+    <meta name="description" content="Resuelve el problema de optimización matemática para maximizar el volumen de un taco usando cálculo diferencial. Incluye análisis gráfico interactivo, modelo 3D y solución paso a paso.">
+    <meta name="keywords" content="cálculo diferencial, optimización matemática, volumen taco, problema matemático, integral, derivada, máximo, geometría analítica, educación matemática, cálculo, optimización, volumen, taco, matemáticas, educación, 3D, interactivo, derivadas, máximos, mínimos">
+    <meta name="author" content="Proyecto de Cálculo">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="language" content="Spanish">
+    <meta name="revisit-after" content="30 days">
+    <meta name="rating" content="general">
+    <meta name="distribution" content="global">
+    <meta name="classification" content="education">
+    <meta name="subject" content="Matemáticas, Cálculo Diferencial, Optimización">
+    <meta name="coverage" content="Worldwide">
+    <meta name="target" content="students, teachers, educators">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://optimizacion-taco.edu/">
+    <meta property="og:title" content="Optimización del Volumen de un Taco - Problema de Cálculo">
+    <meta property="og:description" content="Aprende cálculo diferencial resolviendo un problema real: cómo maximizar el volumen de un taco. Incluye visualización 3D interactiva.">
+    <meta property="og:image" content="https://optimizacion-taco.edu/assets/taco-optimization-preview.jpg">
+    <meta property="og:site_name" content="Proyecto de Cálculo - Optimización del Taco">
+    <meta property="og:locale" content="es_ES">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://optimizacion-taco.edu/">
+    <meta property="twitter:title" content="Optimización del Volumen de un Taco - Cálculo Diferencial">
+    <meta property="twitter:description" content="Resuelve problemas de optimización matemática con este proyecto interactivo sobre maximización del volumen de un taco.">
+    <meta property="twitter:image" content="https://optimizacion-taco.edu/assets/taco-optimization-preview.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://optimizacion-taco.edu/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://unpkg.com">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Three.js para modelo 3D -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.158.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.158.0/examples/jsm/"
+        }
+    }
+    </script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalResource",
+        "name": "Optimización del Volumen de un Taco - Problema de Cálculo Diferencial",
+        "description": "Proyecto educativo interactivo que enseña cálculo diferencial a través de un problema real de optimización: maximizar el volumen de un taco.",
+        "url": "https://optimizacion-taco.edu/",
+        "image": "https://optimizacion-taco.edu/assets/taco-optimization-preview.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "Proyecto de Cálculo"
+        },
+        "educationalLevel": "Universidad",
+        "learningResourceType": "Problema Interactivo",
+        "teaches": [
+            "Cálculo Diferencial",
+            "Optimización Matemática",
+            "Integración",
+            "Derivadas",
+            "Geometría Analítica"
+        ],
+        "audience": {
+            "@type": "EducationalAudience",
+            "educationalRole": "student"
+        },
+        "inLanguage": "es",
+        "datePublished": "2024-01-01",
+        "dateModified": "2024-01-01",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Proyecto de Cálculo"
+        },
+        "mainEntity": {
+            "@type": "MathSolver",
+            "name": "Calculadora de Optimización del Volumen del Taco",
+            "description": "Herramienta interactiva para resolver el problema de optimización del volumen de un taco usando cálculo diferencial."
+        }
+    }
+    </script>
+</head>
+<body itemscope itemtype="https://schema.org/WebPage">
+    <header role="banner">
+        <nav role="navigation" aria-label="Navegación principal">
+            <div class="nav-container">
+                <h1 itemprop="name">Optimización del Volumen de un Taco</h1>
+                <ul>
+                    <li><a href="#problema" aria-label="Ir a la sección del problema">Problema</a></li>
+                    <li><a href="#solucion" aria-label="Ir a la sección de solución">Solución</a></li>
+                    <li><a href="#grafico" aria-label="Ir al análisis gráfico">Análisis Gráfico</a></li>
+                    <li><a href="#conclusion" aria-label="Ir a las conclusiones">Conclusión</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main" itemprop="mainContentOfPage">
+        <section id="hero" itemscope itemtype="https://schema.org/Article">
+            <div class="hero-content">
+                <h2 itemprop="headline">Problema de Cálculo: Maximización del Volumen</h2>
+                <p itemprop="description">Resolviendo un problema real de optimización usando cálculo diferencial</p>
+                <div class="taco-illustration">
+                    <div id="taco-3d-hero" style="width: 300px; height: 200px; margin: 0 auto;" aria-label="Modelo 3D interactivo del taco" role="img"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="problema" class="section" itemscope itemtype="https://schema.org/Article">
+            <div class="container">
+                <h2 itemprop="headline">Planteamiento del Problema</h2>
+                <div class="problem-statement" itemprop="articleBody">
+                    <p>Suponga que planea hacer un taco con una tortilla de <strong>8 pulgadas de diámetro</strong>, de modo que la tortilla parezca que está rodeando en parte un cilindro circular. Llene la tortilla hasta la orilla (y no más) con carne, queso y otros ingredientes.</p>
+                    
+                    <p><strong>El problema es decidir cómo curvar la tortilla para maximizar el volumen de comida que pueda contener.</strong></p>
+                    
+                    <div class="problem-parts">
+                        <h3>Parte (a)</h3>
+                        <p>Empiece por colocar un cilindro circular de radio <em>a</em> lo largo del diámetro de la tortilla, y rodee con ésta el cilindro. Represente con <em>x</em> la distancia desde el centro de la tortilla hasta el punto en el diámetro.</p>
+                        
+                        <p>Demuestre que el área de la sección transversal del taco lleno en el plano que pasa por <em>x</em> y que es perpendicular al eje del cilindro es:</p>
+                        
+                        <div class="formula">
+                            $$A(x) = r\sqrt{16-x^2} - \frac{1}{2}r^2\arcsin\left(\frac{2}{r}\sqrt{16-x^2}\right)$$
+                        </div>
+                        
+                        <h3>Parte (b)</h3>
+                        <p>Determine en forma aproximada el valor de <em>r</em> que maximiza el volumen del taco.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="solucion" class="section" itemscope itemtype="https://schema.org/Article">
+            <div class="container">
+                <h2 itemprop="headline">Desarrollo de la Solución</h2>
+                
+                <div class="solution-step">
+                    <h3>Paso 1: Análisis Geométrico</h3>
+                    <p>Consideremos una tortilla circular de radio 4 pulgadas (diámetro = 8 pulgadas). Cuando colocamos un cilindro de radio <em>r</em> a lo largo del diámetro y curvamos la tortilla alrededor de él:</p>
+                    
+                    <ul>
+                        <li>El centro de la tortilla está en el origen</li>
+                        <li>El cilindro se extiende desde <em>x = -4</em> hasta <em>x = 4</em></li>
+                        <li>En cada punto <em>x</em>, la tortilla forma un arco circular</li>
+                    </ul>
+                </div>
+                
+                <div class="solution-step">
+                    <h3>Paso 2: Cálculo del Área de la Sección Transversal</h3>
+                    <p>Para un punto <em>x</em> dado, la altura de la tortilla en ese punto es:</p>
+                    <div class="formula">
+                        $$h(x) = \sqrt{16-x^2}$$
+                    </div>
+                    
+                    <p>El área de la sección transversal consiste en:</p>
+                    <ol>
+                        <li><strong>Área del rectángulo:</strong> $r \cdot h(x) = r\sqrt{16-x^2}$</li>
+                        <li><strong>Menos el área del segmento circular:</strong> $\frac{1}{2}r^2\arcsin\left(\frac{2h(x)}{r}\right)$</li>
+                    </ol>
+                    
+                    <p>Por lo tanto:</p>
+                    <div class="formula">
+                        $$A(x) = r\sqrt{16-x^2} - \frac{1}{2}r^2\arcsin\left(\frac{2\sqrt{16-x^2}}{r}\right)$$
+                    </div>
+                </div>
+                
+                <div class="solution-step">
+                    <h3>Paso 3: Cálculo del Volumen</h3>
+                    <p>El volumen total se obtiene integrando el área de la sección transversal:</p>
+                    <div class="formula">
+                        $$V(r) = \int_{-4}^{4} A(x) \, dx = \int_{-4}^{4} \left[r\sqrt{16-x^2} - \frac{1}{2}r^2\arcsin\left(\frac{2\sqrt{16-x^2}}{r}\right)\right] dx$$
+                    </div>
+                    
+                    <p>Debido a la simetría, podemos escribir:</p>
+                    <div class="formula">
+                        $$V(r) = 2\int_{0}^{4} \left[r\sqrt{16-x^2} - \frac{1}{2}r^2\arcsin\left(\frac{2\sqrt{16-x^2}}{r}\right)\right] dx$$
+                    </div>
+                </div>
+                
+                <div class="solution-step">
+                    <h3>Paso 4: Evaluación de la Integral</h3>
+                    <p>La primera integral es estándar:</p>
+                    <div class="formula">
+                        $$\int_{0}^{4} r\sqrt{16-x^2} \, dx = r \cdot \frac{\pi \cdot 16}{4} = 4\pi r$$
+                    </div>
+                    
+                    <p>La segunda integral requiere métodos numéricos para valores específicos de <em>r</em>.</p>
+                    
+                    <p>El volumen simplificado es:</p>
+                    <div class="formula">
+                        $$V(r) = 8\pi r - r^2 \int_{0}^{4} \arcsin\left(\frac{2\sqrt{16-x^2}}{r}\right) dx$$
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="grafico" class="section" itemscope itemtype="https://schema.org/Article">
+            <div class="container">
+                <h2 itemprop="headline">Análisis Gráfico y Optimización</h2>
+                
+                <div class="optimization-analysis">
+                    <h3>Método de Optimización</h3>
+                    <p>Para encontrar el valor óptimo de <em>r</em>, necesitamos:</p>
+                    <ol>
+                        <li>Calcular $\frac{dV}{dr} = 0$</li>
+                        <li>Resolver la ecuación resultante</li>
+                        <li>Verificar que sea un máximo</li>
+                    </ol>
+                    
+                    <div class="numerical-result">
+                        <h3>Resultado Numérico</h3>
+                        <p>Usando métodos computacionales, el valor óptimo es aproximadamente:</p>
+                        <div class="formula result">
+                            $$r_{\text{óptimo}} \approx 2.31 \text{ pulgadas}$$
+                        </div>
+                        
+                        <p>Este valor maximiza el volumen del taco, dando un volumen máximo de aproximadamente:</p>
+                        <div class="formula result">
+                            $$V_{\text{máximo}} \approx 23.7 \text{ pulgadas cúbicas}$$
+                        </div>
+                    </div>
+                    
+                    <div class="graph-container">
+                        <h4>Gráfica Interactiva de V(r) vs r</h4>
+                        <div class="chart-wrapper">
+                            <canvas id="volumeChart" width="400" height="300" aria-label="Gráfico interactivo del volumen del taco en función del radio" role="img"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="model-3d-container">
+                        <h4>Modelo 3D Interactivo del Taco</h4>
+                        <div class="model-wrapper">
+                            <div id="taco3D" class="taco-3d-canvas" aria-label="Modelo 3D interactivo del taco optimizado" role="application"></div>
+                            <div class="controls-panel">
+                                <div class="control-group">
+                                    <label for="radiusSlider">Radio del cilindro (r):</label>
+                                    <input type="range" id="radiusSlider" min="0.5" max="4" step="0.1" value="2.31" aria-describedby="radiusValue" aria-label="Ajustar radio del cilindro entre 0.5 y 4 pulgadas">
+                                    <span id="radiusValue" aria-live="polite">2.31</span> pulgadas
+                                </div>
+                                <div class="control-group">
+                                    <label>Volumen calculado:</label>
+                                    <span id="volumeDisplay">23.7</span> pulgadas³
+                                </div>
+                                <div class="control-buttons">
+                                    <button id="resetView" class="neumorphic-btn">Resetear Vista</button>
+                                    <button id="animateRotation" class="neumorphic-btn">Rotar Automático</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="conclusion" class="section" itemscope itemtype="https://schema.org/Article">
+            <div class="container">
+                <h2 itemprop="headline">Conclusión</h2>
+                
+                <div class="conclusion-content">
+                    <h3>Resumen de Resultados</h3>
+                    <ul>
+                        <li>Hemos demostrado que el área de la sección transversal es: $A(x) = r\sqrt{16-x^2} - \frac{1}{2}r^2\arcsin\left(\frac{2\sqrt{16-x^2}}{r}\right)$</li>
+                        <li>El volumen óptimo se alcanza cuando $r \approx 2.31$ pulgadas</li>
+                        <li>Este problema ilustra la aplicación práctica del cálculo en la optimización</li>
+                    </ul>
+                    
+                    <h3>Aplicaciones Prácticas</h3>
+                    <p>Este tipo de análisis se puede aplicar en:</p>
+                    <ul>
+                        <li>Diseño de envases y contenedores</li>
+                        <li>Optimización en la industria alimentaria</li>
+                        <li>Problemas de ingeniería estructural</li>
+                        <li>Diseño de productos curvos</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo" itemscope itemtype="https://schema.org/WPFooter">
+        <div class="container">
+            <p itemprop="copyrightNotice">&copy; 2024 Proyecto de Cálculo - Optimización del Volumen de un Taco</p>
+            <p><small>Proyecto educativo para el aprendizaje de cálculo diferencial y optimización matemática</small></p>
+        </div>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

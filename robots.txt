@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://tu-dominio.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Allow all search engines to index the educational content
+Allow: /index.html
+Allow: /styles.css
+Allow: /script.js
+Allow: /taco.glb
+
+# Disallow any temporary or development files
+Disallow: /temp/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /*.log
+Disallow: /*.tmp

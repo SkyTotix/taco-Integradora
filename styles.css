@@ -1,0 +1,736 @@
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--bg-color);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+}
+
+/* Variables CSS para diseño moderno */
+:root {
+    --bg-color: #FFFFFF;
+    --bg-secondary: #F8F9FA;
+    --bg-tertiary: #E9ECEF;
+    --shadow-light: rgba(0, 0, 0, 0.05);
+    --shadow-dark: rgba(0, 0, 0, 0.1);
+    --primary-color: #2C3E50;
+    --secondary-color: #3498DB;
+    --accent-color: #E74C3C;
+    --gradient-primary: linear-gradient(135deg, #2C3E50 0%, #34495E 100%);
+    --gradient-secondary: linear-gradient(135deg, #3498DB 0%, #5DADE2 100%);
+    --gradient-accent: linear-gradient(135deg, #E74C3C 0%, #EC7063 100%);
+    --gradient-dark: linear-gradient(135deg, #2C3E50 0%, #1B2631 100%);
+    --text-color: #2C3E50;
+    --text-secondary: #7F8C8D;
+    --text-accent: #3498DB;
+    --border-radius: 8px;
+    --border-radius-small: 4px;
+    --glass-bg: rgba(0, 0, 0, 0.02);
+    --glass-border: rgba(0, 0, 0, 0.08);
+    --neumorphic-shadow: 0 2px 8px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.05);
+    --neumorphic-inset: inset 0 1px 4px rgba(0, 0, 0, 0.1), inset 0 -1px 4px rgba(255, 255, 255, 0.3);
+    --glow-primary: 0 0 10px rgba(52, 152, 219, 0.2);
+    --glow-secondary: 0 0 10px rgba(0, 0, 0, 0.1);
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-bounce: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Header y navegación */
+header {
+    background: var(--bg-color);
+    border-bottom: 2px solid var(--glass-border);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    transition: var(--transition-smooth);
+    padding: 1.5rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0;
+    text-decoration: none;
+}
+
+header h1:hover {
+    filter: drop-shadow(var(--glow-primary));
+    transform: scale(1.05);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    transition: var(--transition-smooth);
+    position: relative;
+    background: transparent;
+}
+
+nav a:hover {
+    color: var(--secondary-color);
+    background: var(--bg-secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav a.active {
+    color: var(--secondary-color);
+    background: var(--surface-color);
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+    border: 2px solid var(--secondary-color);
+    font-weight: 700;
+}
+
+/* Sección hero */
+#hero {
+    margin-top: 100px;
+    padding: 5rem 2rem 4rem;
+    text-align: center;
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-color) 100%);
+    color: var(--text-color);
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+.hero-content h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    position: relative;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+    line-height: 1.7;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.taco-illustration {
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    background: var(--bg-color);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--neumorphic-inset);
+    max-width: 400px;
+}
+
+/* Sección principal */
+main {
+    padding: 3rem 2rem;
+    background: var(--bg-color);
+    margin: 0 auto;
+    max-width: 1200px;
+    transition: var(--transition-smooth);
+}
+
+/* Secciones principales */
+.section {
+    padding: 4rem 0;
+    background: rgba(255, 255, 255, 0.6);
+    margin: 2rem 0;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(50, 50, 50, 0.08);
+    position: relative;
+    transition: var(--transition-smooth);
+}
+
+.section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(50, 50, 50, 0.12);
+}
+
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    position: relative;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--secondary-color);
+    border-radius: var(--border-radius-small);
+}
+
+/* Planteamiento del problema */
+.problem-statement {
+    background: var(--bg-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--neumorphic-inset);
+    position: relative;
+}
+
+.problem-statement::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+}
+
+.problem-parts {
+    margin-top: 2rem;
+}
+
+.problem-parts h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin: 1.5rem 0 1rem 0;
+    text-shadow: 1px 1px 2px var(--shadow-dark);
+}
+
+/* Fórmulas matemáticas */
+.formula {
+    background: var(--bg-color);
+    border: 2px solid var(--secondary-color);
+    border-left: 6px solid var(--secondary-color);
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: var(--border-radius);
+    font-size: 1.2rem;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: var(--transition-smooth);
+    color: var(--primary-color);
+    overflow-x: auto;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+}
+
+.formula:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    border-color: var(--accent-color);
+    border-left-color: var(--accent-color);
+}
+
+.formula.result {
+    background: var(--surface-color);
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.3rem;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.15);
+    border: 3px solid var(--secondary-color);
+    border-left: 6px solid var(--secondary-color);
+}
+
+/* Pasos de la solución */
+.solution-step {
+    background: var(--bg-color);
+    border: 1px solid var(--glass-border);
+    border-left: 5px solid var(--secondary-color);
+    padding: 2rem;
+    margin: 1.5rem 0;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    position: relative;
+    transition: var(--transition-smooth);
+    color: var(--text-color);
+    padding-left: 4rem;
+}
+
+.solution-step:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    border-left-color: var(--accent-color);
+}
+
+.solution-step h3 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.solution-step h3::before {
+    content: counter(step-counter);
+    counter-increment: step-counter;
+    position: absolute;
+    left: 1.5rem;
+    top: 2rem;
+    background: var(--secondary-color);
+    color: white;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: var(--transition-bounce);
+}
+
+.solution-step:hover h3::before {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#solucion {
+    counter-reset: step-counter;
+}
+
+.solution-step ul, .solution-step ol {
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+.solution-step li {
+    margin-bottom: 0.5rem;
+}
+
+/* Análisis gráfico */
+.optimization-analysis {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.numerical-result {
+    background: white;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+/* Contenedor del gráfico mejorado */
+.graph-container {
+    background: var(--bg-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    margin-top: 2rem;
+    box-shadow: var(--neumorphic-shadow);
+}
+
+.graph-container h4 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.chart-wrapper {
+    background: var(--bg-color);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--neumorphic-inset);
+    margin: 1rem 0;
+}
+
+/* Modelo 3D */
+.model-3d-container {
+    background: var(--bg-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    margin-top: 3rem;
+    box-shadow: var(--neumorphic-shadow);
+}
+
+.model-3d-container h4 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.model-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.taco-3d-canvas {
+    width: 100%;
+    height: 400px;
+    background: var(--bg-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--neumorphic-inset);
+    position: relative;
+    overflow: hidden;
+}
+
+.controls-panel {
+    background: var(--bg-color);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--neumorphic-shadow);
+}
+
+.control-group {
+    margin-bottom: 1.5rem;
+}
+
+.control-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.control-group input[type="range"] {
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background: var(--bg-color);
+    box-shadow: var(--neumorphic-inset);
+    outline: none;
+    -webkit-appearance: none;
+    margin: 0.5rem 0;
+}
+
+.control-group input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--bg-color);
+    box-shadow: var(--neumorphic-shadow);
+    cursor: pointer;
+}
+
+.control-group input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--bg-color);
+    box-shadow: var(--neumorphic-shadow);
+    cursor: pointer;
+    border: none;
+}
+
+.control-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.neumorphic-btn {
+    background: var(--bg-color);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--neumorphic-shadow);
+    color: var(--text-color);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.neumorphic-btn:hover {
+    box-shadow: var(--neumorphic-inset);
+    transform: translateY(2px);
+}
+
+.neumorphic-btn:active {
+    box-shadow: var(--neumorphic-inset);
+    transform: translateY(4px);
+}
+
+#radiusValue, #volumeDisplay {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Responsive para modelo 3D */
+@media (max-width: 768px) {
+    .model-wrapper {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .taco-3d-canvas {
+        height: 300px;
+    }
+    
+    .control-buttons {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .neumorphic-btn {
+        flex: 1;
+        margin: 0 0.25rem;
+    }
+}
+
+/* Conclusión */
+.conclusion-content h3 {
+    color: #667eea;
+    margin: 2rem 0 1rem 0;
+}
+
+.conclusion-content ul {
+    margin-left: 2rem;
+}
+
+.conclusion-content li {
+    margin-bottom: 0.8rem;
+    position: relative;
+}
+
+.conclusion-content li::before {
+    content: '✓';
+    color: #667eea;
+    font-weight: bold;
+    position: absolute;
+    left: -1.5rem;
+}
+
+/* Footer */
+footer {
+    background: var(--bg-color);
+    border-top: 3px solid var(--secondary-color);
+    padding: 3rem 0;
+    text-align: center;
+    margin-top: 4rem;
+    position: relative;
+}
+
+footer p {
+    color: var(--text-secondary);
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+footer small {
+    color: var(--text-secondary);
+    opacity: 0.7;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+/* Animaciones sutiles */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    nav ul {
+        gap: 1rem;
+    }
+    
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+    
+    .section h2 {
+        font-size: 2rem;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .formula {
+        font-size: 0.9rem;
+        padding: 1rem;
+    }
+    
+    .solution-step {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .section {
+        margin: 1rem 0;
+        border-radius: 10px;
+    }
+    
+    .formula {
+        font-size: 0.8rem;
+    }
+}
+
+/* Mejoras para la legibilidad de las matemáticas */
+.MathJax {
+    font-size: 1.1em !important;
+}
+
+/* Efectos hover para elementos interactivos */
+.solution-step:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+}
+
+.formula:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+/* Indicador de scroll suave y mejoras generales */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 5px;
+    border: 2px solid var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+/* Selección de texto personalizada */
+::selection {
+    background: var(--secondary-color);
+    color: white;
+}
+
+::-moz-selection {
+    background: var(--secondary-color);
+    color: white;
+}
+
+/* Efectos de focus mejorados */
+*:focus {
+    outline: 3px solid var(--secondary-color);
+    outline-offset: 2px;
+    border-radius: var(--border-radius-small);
+}
+
+/* Mejoras para elementos interactivos */
+button, input, select, textarea {
+    transition: var(--transition-smooth);
+}
+
+/* Efecto de carga para imágenes */
+img {
+    transition: opacity 0.3s ease;
+}
+
+img:not([src]) {
+    opacity: 0;
+}
+
+/* Estilo para resaltar texto importante */
+strong {
+    color: #667eea;
+    font-weight: 600;
+}
+
+em {
+    color: #764ba2;
+    font-style: italic;
+    font-weight: 500;
+}
