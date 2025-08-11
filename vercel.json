@@ -10,7 +10,7 @@
       ]
     },
     {
-      "source": "/assets/models/(.*\\.glb)",
+      "source": "/(.*\\.glb)",
       "headers": [
         {
           "key": "Content-Type",

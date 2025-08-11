@@ -365,7 +365,7 @@ function initHero3DModel() {
     // Cargar modelo del taco
     const loader = new GLTFLoader();
     loader.load(
-        '/assets/models/taco.glb',
+        '/taco.glb',
         function (gltf) {
             const model = gltf.scene;
             model.scale.setScalar(2);
@@ -496,7 +496,7 @@ function createTortilla() {
     const loader = new GLTFLoader();
     
     loader.load(
-        '/assets/models/taco.glb',
+        '/taco.glb',
         function (gltf) {
             // Modelo cargado exitosamente
             const tacoModel = gltf.scene;
